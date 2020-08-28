@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.10.56:3306/spring?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+    username: pbadmin
+    password: clbeegood1234
