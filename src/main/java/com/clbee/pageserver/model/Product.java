@@ -14,16 +14,14 @@ public class Product {
     private String name;
     private String brand;
     private String madein;
-    private float price;
+    private int price;
 
     public Product() {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
-
-    // other getters and setters are hidden for brevity
 }

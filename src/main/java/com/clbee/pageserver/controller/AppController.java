@@ -17,7 +17,7 @@ public class AppController {
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
-        List<Product> listProducts = service.listAll();
+        List<Product> listProducts = service.listAllProduct();
         model.addAttribute("listProducts", listProducts);
 
         return "index";
@@ -32,7 +32,7 @@ public class AppController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute("product") Product product) {
-        service.save(product);
+        service.saveProduct(product);
 
         return "redirect:/";
     }
@@ -40,7 +40,7 @@ public class AppController {
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
         ModelAndView modelAndViewv = new ModelAndView("edit_product");
-        Product product = service.get(id);
+        Product product = service.getOneProduct(id);
         modelAndViewv.addObject("product", product);
 
         return modelAndViewv;

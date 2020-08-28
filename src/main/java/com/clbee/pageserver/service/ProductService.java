@@ -13,21 +13,21 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductService {
 
     @Autowired
-    private ProductRepository repo;
+    private ProductRepository repository;
 
-    public List<Product> listAll() {
-        return repo.findAll();
+    public List<Product> listAllProduct() {
+        return repository.findAll();
     }
 
-    public void save(Product product) {
-        repo.save(product);
+    public void saveProduct(Product product) {
+        repository.save(product);
     }
 
-    public Product get(long id) {
-        return repo.findById(id).get();
+    public Product getOneProduct(long id) {
+        return repository.findById(id).get();
     }
 
-    public void delete(long id) {
-        repo.deleteById(id);
+    public void deleteProduct(long id) {
+        repository.deleteById(id);
     }
 }
